@@ -9,7 +9,7 @@ function Cart() {
   const priceBunchOfFlowers = 15
   // Add a className to put some CSS
   return (
-    <div>
+    <div className='tjh-cart'>
       <h2>My cart</h2>
         <ul>
           <li>Monstera : { priceMonstera }€</li>
