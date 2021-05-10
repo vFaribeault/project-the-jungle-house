@@ -1,10 +1,13 @@
+// Import CSS file to add style
+import '../styles/Cart.css'
+
 // Create a cart component
 function Cart() {
-  // Declare the price variables
+  // Create variables for each price
   const priceMonstera = 8
   const priceIvy = 10
   const priceBunchOfFlowers = 15
-  // Return the right HTML with name and price for each article, also the total price
+  // Add a className to put some CSS
   return (
     <div>
       <h2>My cart</h2>
@@ -14,7 +17,9 @@ function Cart() {
           <li>Bunch of flowers : { priceBunchOfFlowers }€</li>
         </ul>
         <p>Total price : { priceMonstera + priceIvy + priceBunchOfFlowers }€</p>
-    </div>)
+    </div>
+  )
 }
 
+// Export file to import it in "index.js"
 export default Cart
