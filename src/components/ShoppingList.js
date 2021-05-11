@@ -24,7 +24,10 @@ function ShoppingList() {
 			<ul>
 				{plantList.map((plant) =>
           // Do not miss to generate each element key with id
-					<li key={plant.id}>{plant.name}</li>
+					<li key={plant.id}>
+            {plant.name + ' '}
+            {plant.isBestSale ? <span>🔥</span> : null}
+          </li>
 				)}
 			</ul>
 		</div>
