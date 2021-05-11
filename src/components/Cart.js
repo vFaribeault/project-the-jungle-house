@@ -1,13 +1,13 @@
-// Import CSS file to add style
+// Import Cart.css file to add style
 import '../styles/Cart.css'
 
-// Create a cart component
+// Create a Cart component
 function Cart() {
   // Create variables for each price
   const priceMonstera = 8
   const priceIvy = 10
   const priceBunchOfFlowers = 15
-  // Add a className to put some CSS
+  // Add className on cart to then manage style
   return (
     <div className='tjh-cart'>
       <h2>My cart</h2>
@@ -21,5 +21,5 @@ function Cart() {
   )
 }
 
-// Export file to import it in "index.js"
+// Export file to import it in "App.js"
 export default Cart
