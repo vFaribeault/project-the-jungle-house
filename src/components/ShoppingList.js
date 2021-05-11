@@ -15,18 +15,20 @@ function ShoppingList() {
   // Iterate on categoryList and plantList
 	return (
 		<div>
-			<ul>
+			<ul className='tjh-plant-list'>
 				{categoryList.map((category) =>
           // Do not miss to generate each element key with data value
-					<li key={category}>{category}</li>
+					<li className='tjh-plant-item' key={category}>
+            {category}
+          </li>
 				)}
 			</ul>
-			<ul>
+			<ul className='tjh-plant-list'>
 				{plantList.map((plant) =>
           // Do not miss to generate each element key with id
-					<li key={plant.id}>
-            {plant.name + ' '}
-            {plant.isBestSale ? <span>🔥</span> : null}
+					<li className='tjh-plant-item' key={plant.id}>
+            {plant.name}
+            {plant.isSpecialOffer ? <span className='tjh-sales'>On sale</span> : null}
           </li>
 				)}
 			</ul>
