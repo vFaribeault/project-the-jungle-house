@@ -33,6 +33,7 @@ function ShoppingList() {
 					<li key={plant.id} className='tjh-plant-item'>
             {plant.name}
             {plant.isBestSale ? <span className='tjh-sales'>On sale</span> : null}
+						{/* Use CareScale components with a "type" prop for both water and light */}
 						<CareScale careType='water' scaleValue={plant.water} />
 						<CareScale careType='light' scaleValue={plant.light} />
 					</li>
