@@ -43,5 +43,5 @@ function ShoppingList() {
 	)
 }
 
-// Export file to import it in "App.js" ..
+// Export file to import it in "App.js"
 export default ShoppingList
