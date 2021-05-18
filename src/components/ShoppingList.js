@@ -22,7 +22,7 @@ function ShoppingList() {
 			<ul className='tjh-plant-list'>
 				{categoryList.map((category) =>
           // Do not miss to generate each element key with data value
-					<li  key={category} className='tjh-plant-item'>
+					<li key={category} className='tjh-plant-item'>
             {category}
           </li>
 				)}
@@ -33,7 +33,7 @@ function ShoppingList() {
 					<li key={plant.id} className='tjh-plant-item'>
             {plant.name}
             {plant.isBestSale ? <span className='tjh-sales'>On sale</span> : null}
-						{/* Use CareScale components with a "type" prop for both water and light */}
+						{/* Use CareScale component with a "type" and a "value" props for both water and light */}
 						<CareScale careType='water' scaleValue={plant.water} />
 						<CareScale careType='light' scaleValue={plant.light} />
 					</li>

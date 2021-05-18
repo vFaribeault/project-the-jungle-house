@@ -1,7 +1,8 @@
-function CareScale({scaleValue, careType}) {
-  // Define a scale between 1 and 3
+function CareScale({ scaleValue, careType }) {
+  // Define a range between 1 and 3
   const range = [1, 2, 3]
-  // Define variable for the props value
+  // Define a scaleType variable to check the careType (light or water)
+  // and send back a sun or a drop
   const scaleType = careType === 'light' ? '☀️' : '💧'
 
   return (
