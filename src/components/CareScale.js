@@ -3,7 +3,7 @@ function CareScale({ scaleValue, careType }) {
   const range = [1, 2, 3]
   // Define a scaleType variable to check the careType (light or water)
   // and send back a sun or a drop
-  const scaleType = careType === 'light' ? '☀️' : '💧'
+  const scaleType = careType === 'light' ? (<img src={Sun} alt='sun-icon' />) : (<img src={Water} alt='water-icon' />)
 
   return (
     <div>

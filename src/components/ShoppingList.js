@@ -1,7 +1,7 @@
 // Import plantList datas
 import { plantList } from '../datas/plantList'
-// Import CareScale component
-import CareScale from './CareScale'
+// Import PlanItem component
+import PlantItem from './PlantItem'
 // Import ShoppingList.css file to add style
 import '../styles/ShoppingList.css'
 
