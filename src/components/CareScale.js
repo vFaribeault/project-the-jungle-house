@@ -1,3 +1,7 @@
+// Import icons
+import Sun from '../assets/sun.svg'
+import Water from '../assets/water.svg'
+
 function CareScale({ scaleValue, careType }) {
   // Define a range between 1 and 3
   const range = [1, 2, 3]

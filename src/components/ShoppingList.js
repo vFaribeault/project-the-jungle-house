@@ -19,25 +19,16 @@ function ShoppingList() {
   // Iterate on categoryList and plantList
 	return (
 		<div>
-			<ul className='tjh-plant-list'>
+			<ul>
 				{categoryList.map((category) =>
           // Do not miss to generate each element key with data value
-					<li key={category} className='tjh-plant-item'>
-            {category}
-          </li>
+					<li key={category} className='tjh-plant-item'>{category}</li>
 				)}
 			</ul>
 			<ul className='tjh-plant-list'>
-				{plantList.map((plant) =>
-          // Do not miss to generate each element key with id
-					<li key={plant.id} className='tjh-plant-item'>
-            {plant.name}
-            {plant.isBestSale ? <span className='tjh-sales'>On sale</span> : null}
-						{/* Use CareScale component with a "type" and a "value" props for both water and light */}
-						<CareScale careType='water' scaleValue={plant.water} />
-						<CareScale careType='light' scaleValue={plant.light} />
-					</li>
-				)}
+				{plantList.map(({ id, cover, name, water, light }) => (
+					<PlantItem id={id} cover={cover} name={name} water={water} light={light} />
+				))}
 			</ul>
 		</div>
 	)
