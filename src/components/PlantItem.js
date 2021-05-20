@@ -3,15 +3,15 @@ import CareScale from './CareScale'
 // Import PlantItem.css file to add style
 import '../styles/PlantItem.css'
 
-// Declare a function to call when you'll ckick on an item
-function handleClick(e) {
-	alert(`Vous voulez acheter 1 ${e} ? Très bon choix 🌱✨`)
+// Declare a function to call when you'll click on an item
+function handleClick(plant) {
+	alert(`Do you want to buy 1 ${plant} ? Very good choice !`)
 }
 
 // PlanItem component takes 5 props
 function PlantItem({ name, cover, id, light, water }) {
   return (
-		// Declare an 'onClick' event, pass it 'handleClick' function with the name as argument
+		// Declare (listen) an 'onClick' event, pass it 'handleClick' function with the name as argument
 		<li key={id} className='tjh-plant-item' onClick={() => handleClick(name)}>
 			<img className='tjh-plant-item-cover' src={cover} alt={`${name} cover`} />
 			{name}
