@@ -8,7 +8,7 @@ function handleClick(plant) {
 	alert(`Do you want to buy 1 ${plant} ? Very good choice !`)
 }
 
-// PlanItem component takes 5 props
+// Create a PlanItem component which takes 5 props
 function PlantItem({ name, cover, id, light, water }) {
   return (
 		// Declare (listen) an 'onClick' event, pass it 'handleClick' function with the name as argument

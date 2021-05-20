@@ -1,7 +1,8 @@
-// Import Banner, Cart and ShoppingList components to use it in App component
+// Import Banner, Cart, ShoppingList and Footer components to use it in App component
 import Banner from './Banner'
+import Cart from './Cart'
 import ShoppingList from './ShoppingList'
-// import Cart from './Cart'
+import Footer from './Footer'
 
 // Create an App component
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <Banner />
       {/* <Cart /> */}
       <ShoppingList />
+      <Footer />
     </div>
   )
 }
