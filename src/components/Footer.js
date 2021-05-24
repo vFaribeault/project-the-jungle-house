@@ -13,7 +13,7 @@ function Footer() {
 		setInputValue(e.target.value)
 	}
 
-  // Declare a function to get the blur, the click outside the text area
+  // Declare a function to get the blur (=the click outside the text area)
   // Check if the input is valid mail
 	function handleBlur() {
 		if (!inputValue.includes('@')) {
