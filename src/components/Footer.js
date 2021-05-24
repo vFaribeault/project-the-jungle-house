@@ -29,7 +29,7 @@ function Footer() {
 			</div>
 
 			<div className='tjh-footer-element'>Please let us your email :</div>
-      {/* Declare (listen) an "onChange" event and "onBlur" event */}
+      {/* Listen an "onChange" event and "onBlur" event */}
       <input
         placeholder="Enter your email"
         onChange={handleInput}

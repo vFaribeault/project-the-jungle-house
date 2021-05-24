@@ -7,16 +7,19 @@ import '../styles/Cart.css'
 function Cart() {
   // Create variable for the monstera price
   const monsteraPrice = 8
-  // Create a Cart stateful component init with 0€
-  // "cart" is the init variable and "updateCart" the setting function
+
+  // Create a Cart stateful component, with "cart" as init variable and "updateCart" as setting function
+  // Initialised it at 0€
   const [cart, updateCart] = useState(0)
 
-  // Add className on cart to then manage style
   return (
+    // Add className on cart to then manage style
     <div className='tjh-cart'>
       <h2>Cart</h2>
       <div>
         Monstera : {monsteraPrice}€
+        {/* Listen an "onClick" event and pass it the function "updateCart" to save input value in local state */}
+				{/* Then, you have an access to the user value in "cart" */}
         <button onClick={() => updateCart(cart + 1)}>Add</button>
       </div>
       <h3>Total : {monsteraPrice * cart}€</h3>
