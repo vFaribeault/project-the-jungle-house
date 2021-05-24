@@ -14,12 +14,10 @@ function Cart() {
   // Add className on cart to then manage style
   return (
     <div className='tjh-cart'>
-      <h2>Panier</h2>
+      <h2>Cart</h2>
       <div>
         Monstera : {monsteraPrice}€
-        <button onClick={() => updateCart(cart + 1)}>
-          Ajouter
-        </button>
+        <button onClick={() => updateCart(cart + 1)}>Add</button>
       </div>
       <h3>Total : {monsteraPrice * cart}€</h3>
     </div>
