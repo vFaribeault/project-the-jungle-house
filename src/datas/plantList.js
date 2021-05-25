@@ -13,7 +13,6 @@ export const plantList = [
 		name: 'monstera',
 		category: 'classique',
 		id: '1ed',
-		isBestSale: true,
 		light: 2,
 		water: 3,
 		cover: monstera
@@ -47,7 +46,6 @@ export const plantList = [
 		name: 'olivier',
 		category: 'extérieur',
 		id: '5pl',
-		isBestSale: true,
 		light: 3,
 		water: 1,
 		cover: olivier
@@ -65,7 +63,6 @@ export const plantList = [
 		name: 'basilique',
 		category: 'extérieur',
 		id: '7ie',
-		isBestSale: true,
 		light: 2,
 		water: 3,
 		cover: basil
@@ -74,7 +71,6 @@ export const plantList = [
 		name: 'succulente',
 		category: 'plante grasse',
 		id: '9vn',
-		isBestSale: true,
 		light: 2,
 		water: 1,
 		cover: succulent

@@ -12,8 +12,6 @@ function Cart() {
   const [cart, updateCart] = useState(0)
   // Create an Open Cart state variable, init at true, with "isOpen" as init variable and "setIsOpen" as setting function
   const [isOpen, setIsOpen] = useState(true)
-  // Create an Empty Cart state variable, init at true, with "isFull" as init variable and "setIsFull" as setting function
-  const [isFull, setIsFull] = useState(true)
 
   return isOpen ? (
 
@@ -23,20 +21,31 @@ function Cart() {
       {/* Add a closed button because the cart is opened */}
       {/* Listen an "onClick" event, pass it the function "setIsOpen" to save input value in local state */}
       {/* Then, you have an access to the value in "isOpen" */}
-      <button onClick={() => setIsOpen(false)}>Fermer</button>
+      <button className='tjh-cart-toggle-button' onClick={() => setIsOpen(false)}>
+        Close the cart
+      </button>
 
       {/* Add a Cart title */}
       <h2>Cart</h2>
+      
+      {/* Get the plant price */}
+      <div>Monstera : {monsteraPrice}€</div>
 
-      <div>
-        Monstera : {monsteraPrice}€
-        {/* Listen an "onClick" event, pass it the function "updateCart" to save input value in local state */}
-				{/* Then, you have an access to the value in "cart" */}
-        <button onClick={() => updateCart(cart + 1)}>Add</button>
-      </div>
+      {/* Listen an "onClick" event, pass it the function "updateCart" to save input value in local state */}
+      {/* Then, you have an access to the value in "cart" */}
+      <button onClick={() => updateCart(cart + 1)}>
+        Add
+      </button>
 
       {/* Add the total price */}
       <h3>Total : {monsteraPrice * cart}€</h3>
+      
+      {/* Add a button to empty the cart */}
+      {/* Listen an "onClick" event, pass it the function "setIsFull" to save input value in local state */}
+      {/* Then, you have an access to the value in "isFull" */}
+      <button onClick={() => updateCart(0)}>
+        Empty the cart
+      </button>
 
     </div>
 
@@ -44,7 +53,11 @@ function Cart() {
     // Add an opened button because the cart is closed
     // Listen an "onClick" event, pass it the function "setIsOpen" to save input value in local state
     // Then, you have an access to the value in "isOpen"
-    <button onClick={() => setIsOpen(true)}>Open the cart</button>
+    <div className='tjh-cart-toggle-button'>
+      <button className='tjh-cart-toggle-button' onClick={() => setIsOpen(true)}>
+        Open the cart
+      </button>
+    </div>
   )
 
 }
