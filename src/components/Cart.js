@@ -10,8 +10,10 @@ function Cart() {
   const monsteraPrice = 8
 	// Create a Cart state variable, init at 0, with "cart" as init variable and "updateCart" as setting function
   const [cart, updateCart] = useState(0)
-  // Create a Open Cart state variable, init at true, with "isOpen" as init variable and "setIsOpen" as setting function
+  // Create an Open Cart state variable, init at true, with "isOpen" as init variable and "setIsOpen" as setting function
   const [isOpen, setIsOpen] = useState(true)
+  // Create an Empty Cart state variable, init at true, with "isFull" as init variable and "setIsFull" as setting function
+  const [isFull, setIsFull] = useState(true)
 
   return isOpen ? (
 
@@ -44,7 +46,7 @@ function Cart() {
     // Then, you have an access to the value in "isOpen"
     <button onClick={() => setIsOpen(true)}>Open the cart</button>
   )
-  
+
 }
 
 // Export file to import it in "App.js"
