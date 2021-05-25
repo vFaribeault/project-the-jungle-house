@@ -5,11 +5,12 @@ import '../styles/Cart.css'
 
 // Create a Cart component
 function Cart() {
+  
   // Create variable for the monstera price
   const monsteraPrice = 8
 
-  // Create a Cart stateful component, with "cart" as init variable and "updateCart" as setting function
-  // Initialised it at 0€
+	// Create a Cart state variable init at 0€
+	// "cart" is the init variable and "updateCart" the setting function
   const [cart, updateCart] = useState(0)
 
   return (
