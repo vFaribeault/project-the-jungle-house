@@ -5,13 +5,13 @@ import '../styles/Cart.css'
 
 // Create a Cart component
 function Cart() {
-  
+
   // Create variable for the monstera price
   const monsteraPrice = 8
-
-	// Create a Cart state variable init at 0€
-	// "cart" is the init variable and "updateCart" the setting function
+	// Create a Cart state variable, init at 0, with "cart" as init variable and "updateCart" as setting function
   const [cart, updateCart] = useState(0)
+  // Create a Open Cart state variable, init at true, with "isOpen" as init variable and "setIsOpen" as setting function
+  const [isOpen, setIsOpen] = useState(true)
 
   return (
     // Add className on cart to then manage style
