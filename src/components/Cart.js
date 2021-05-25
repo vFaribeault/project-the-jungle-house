@@ -13,19 +13,38 @@ function Cart() {
   // Create a Open Cart state variable, init at true, with "isOpen" as init variable and "setIsOpen" as setting function
   const [isOpen, setIsOpen] = useState(true)
 
-  return (
+  return isOpen ? (
+
     // Add className on cart to then manage style
     <div className='tjh-cart'>
+
+      {/* Add a closed button because the cart is opened */}
+      {/* Listen an "onClick" event, pass it the function "setIsOpen" to save input value in local state */}
+      {/* Then, you have an access to the value in "isOpen" */}
+      <button onClick={() => setIsOpen(false)}>Fermer</button>
+
+      {/* Add a Cart title */}
       <h2>Cart</h2>
+
       <div>
         Monstera : {monsteraPrice}€
-        {/* Listen an "onClick" event and pass it the function "updateCart" to save input value in local state */}
-				{/* Then, you have an access to the user value in "cart" */}
+        {/* Listen an "onClick" event, pass it the function "updateCart" to save input value in local state */}
+				{/* Then, you have an access to the value in "cart" */}
         <button onClick={() => updateCart(cart + 1)}>Add</button>
       </div>
+
+      {/* Add the total price */}
       <h3>Total : {monsteraPrice * cart}€</h3>
+
     </div>
+
+  ) : (
+    // Add an opened button because the cart is closed
+    // Listen an "onClick" event, pass it the function "setIsOpen" to save input value in local state
+    // Then, you have an access to the value in "isOpen"
+    <button onClick={() => setIsOpen(true)}>Open the cart</button>
   )
+  
 }
 
 // Export file to import it in "App.js"
