@@ -1,7 +1,7 @@
 // Import CareScale component
 import CareScale from './CareScale'
 // Import PlantItem.css file to add style
-// import '../styles/PlantItem.css'
+import '../styles/PlantItem.css'
 
 // Declare a function to call when you'll click on an item
 function handleClick(plant) {
