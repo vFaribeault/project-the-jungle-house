@@ -6,10 +6,16 @@ import '../styles/Cart.css'
 // Create a Cart component, with "cart" and "updateCart" as props from "App.js" parent local state
 function Cart({ cart, updateCart }) {
 
-  // Create variable for the monstera price
-  const monsteraPrice = 8
   // Create an Open Cart state variable, init at "true", with "isOpen" as init variable and "setIsOpen" as setting function
   const [isOpen, setIsOpen] = useState(true)
+
+  // Use an accumalator to try to reduce each list value to one value
+  const total = cart.reduce((accumulator, plantType) =>
+    // If plant already exists in accumulator, send back accumulator and go to next value
+    // If not, push the category inside a new accumulator array
+    accumulator + plantType.amount * plantType.price,
+    0
+  )
 
   return isOpen ? (
 
@@ -24,13 +30,21 @@ function Cart({ cart, updateCart }) {
       {/* Add a Cart title */}
       <h2>Cart</h2>
 
+      {/* Iterate on cart */}
+      {/* You have an acces to the following props because "cart" is defined in the parent local state */}
+      {cart.map(({ name, price, amount }, index) => (
+        <div key={`${name}-${index}`}>
+          {name} {price}€ x {amount}
+        </div>
+      ))}
+
       {/* Add the total price */}
-      <h3>Total : {monsteraPrice * cart}€</h3>
+      <h3>Total : {total}€</h3>
       
       {/* Add a button to empty the cart */}
       {/* Listen an "onClick" event, pass it the function "setIsFull" to save input value in local state */}
       {/* Then, you have an access to the value in "isFull" */}
-      <button onClick={() => updateCart(0)}>Empty the cart</button>
+      <button onClick={() => updateCart([])}>Empty the cart</button>
 
     </div>
 
