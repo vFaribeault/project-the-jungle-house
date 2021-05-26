@@ -8,7 +8,7 @@ function Cart({ cart, updateCart }) {
 
   // Create variable for the monstera price
   const monsteraPrice = 8
-  // Create an Open Cart state variable, init at true, with "isOpen" as init variable and "setIsOpen" as setting function
+  // Create an Open Cart state variable, init at "true", with "isOpen" as init variable and "setIsOpen" as setting function
   const [isOpen, setIsOpen] = useState(true)
 
   return isOpen ? (
