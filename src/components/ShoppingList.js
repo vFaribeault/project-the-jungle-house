@@ -16,17 +16,31 @@ function ShoppingList({ cart, updateCart }) {
 		[]
 	)
 
-	{/* You have an acces to the following props thank to "cart" defined in the parent local state */}
+	// Create a function to add the plan to the Cart
+	// You have an access to the following props thanks to "cart" defined in the parent local state
 	function addToCart(name, price) {
-		const currentPlantSaved = cart.find((plant) => plant.name === name)
+
+		// Check if the plant you want to add is already present in the cart
+		const currentPlantSaved = cart.find(
+			(plant) => plant.name === name
+		)
+
+		// If the plant you add is already present in the cart, create a new array without this new plant with "filter"
 		if (currentPlantSaved) {
 			const cartFilteredCurrentPlant = cart.filter(
 				(plant) => plant.name !== name
 			)
+			// Add this new array to "updateCart"
 			updateCart([
+				// By using the spread operator
 				...cartFilteredCurrentPlant,
+				// With props (name, price, object amount) inside the new object added
+				// Don't forget to incremente the amount of the new plant you let aside
 				{ name, price, amount: currentPlantSaved.amount + 1 }
 			])
+		
+		// Otherwise, get the existing cart and add the new plant as object withn its props
+		// Don't forget to initialize the amount of the new plant at "1"
 		} else {
 			updateCart([...cart, { name, price, amount: 1 }])
 		}
