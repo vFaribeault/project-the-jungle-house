@@ -7,9 +7,8 @@ import '../styles/Layout.css'
 
 // Create an App component
 function App() {
-  // Create a Cart state variable, with "cart" as init variable and "updateCart" as setting function
+  // Create a Cart local state variable, with "cart" as init variable and "updateCart" as setting function
   const [cart, updateCart] = useState([])
-
 
   return (
     <div>
@@ -17,8 +16,9 @@ function App() {
       <Banner />
       
       <div className='tjh-layout-inner'>
-        <Cart />
-        <ShoppingList />
+        {/* Use Cart and ShoppingList components with "cart" and "updateCart" as props */}
+        <Cart cart={cart} updateCart={updateCart} />
+        <ShoppingList cart={cart} updateCart={updateCart} />
       </div>
       
       <Footer />
