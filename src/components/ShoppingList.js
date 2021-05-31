@@ -61,14 +61,21 @@ function ShoppingList({ cart, updateCart }) {
 
 			{/* Iterate on plantList and use the PlanItem component for each item */}
 			<ul className='tjh-plant-list'>
-				{plantList.map(({ id, cover, name, water, light, price }) => (
-					<div key={id}>
-						<PlantItem cover={cover} name={name} water={water} light={light} price={price} />
-						{/* Add a button to add the plant to the cart */}
-      			{/* Listen an "onClick" event, pass it the function "addToCart" to save input value in local state */}
-      			{/* Then, you have an access to values in "name" and "price" */}
-						<button onClick={() => addToCart(name, price)} >Add</button>
-					</div>
+				{plantList.map(({ id, cover, name, water, light, price, category }) => (
+					// Check if no category is selected or if the user has selected a category
+					// "!activeCategory" allows to display all plant items if no category selected
+					// "activeCategory === category" allows to know if the user has selected a category
+					!activeCategory || activeCategory === category ? (
+						// If so, display the corresponding plant items 
+						<div key={id}>
+							<PlantItem cover={cover} name={name} water={water} light={light} price={price} />
+							{/* Add a button to add the plant to the cart */}
+							{/* Listen an "onClick" event, pass it the function "addToCart" to save input value in local state */}
+							{/* Then, you have an access to values in "name" and "price" */}
+							<button onClick={() => addToCart(name, price)} >Add</button>
+						</div>
+						// Otherwise, nothing happens 
+					) : null
 				))}
 			</ul>
 
