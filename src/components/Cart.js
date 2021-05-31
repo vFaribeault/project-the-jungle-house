@@ -17,9 +17,10 @@ function Cart({ cart, updateCart }) {
     0
   )
 
+  // Check if the cart is opened or closed
   return isOpen ? (
 
-    // Add className on cart to then manage style
+    // If the cart is opened
     <div className='tjh-cart'>
 
       {/* Add a closed button because the cart is opened */}
@@ -27,28 +28,45 @@ function Cart({ cart, updateCart }) {
       {/* Then, you have an access to the value in "isOpen" */}
       <button className='tjh-cart-toggle-button' onClick={() => setIsOpen(false)}>Close the cart</button>
 
-      {/* Add a Cart title */}
-      <h2>Cart</h2>
+      {/* Check if the cart is full or empty */}
+      {cart.length > 0 ? (
+        
+        // If the cart is full
+        <div>
 
-      {/* Iterate on cart */}
-      {/* You have an acces to the following props because "cart" is defined in the parent local state */}
-      {cart.map(({ name, price, amount }, index) => (
-        <div key={`${name}-${index}`}>
-          {name} {price}€ x {amount}
+          {/* Add a Cart title */}
+          <h2>Cart</h2>
+
+          {/* Iterate on cart */}
+          {/* You have an acces to the following props because "cart" is defined in the parent local state */}
+          {cart.map(({ name, price, amount }, index) => (
+            <div key={`${name}-${index}`}>
+              {name} {price}€ x {amount}
+            </div>
+          ))}
+
+          {/* Add the total price */}
+          <h3>Total : {total}€</h3>
+          
+          {/* Add a button to empty the cart */}
+          {/* Listen an "onClick" event, pass it the function "setIsFull" to save input value in local state */}
+          {/* Then, you have an access to the value in "isFull" */}
+          <button onClick={() => updateCart([])}>Empty the cart</button>
+        
         </div>
-      ))}
-
-      {/* Add the total price */}
-      <h3>Total : {total}€</h3>
       
-      {/* Add a button to empty the cart */}
-      {/* Listen an "onClick" event, pass it the function "setIsFull" to save input value in local state */}
-      {/* Then, you have an access to the value in "isFull" */}
-      <button onClick={() => updateCart([])}>Empty the cart</button>
+      ) : (
+
+        // Otherwise, the cart is empty
+        <div>Your cart is empty</div>
+
+      )}
 
     </div>
 
   ) : (
+
+    // Otherwise, the cart is closed
     // Add an opened button because the cart is closed
     // Listen an "onClick" event, pass it the function "setIsOpen" to save input value in local state
     // Then, you have an access to the value in "isOpen"
