@@ -56,8 +56,8 @@ function ShoppingList({ cart, updateCart }) {
 
   return (
 		<div className='tjh-shopping-list'>
-			{/* Use Categories components with "activeCategory" and "setActiveCategory" as props */}
-			<Categories activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
+			{/* Use Categories components with "categories", "activeCategory" and "setActiveCategory" as props */}
+			<Categories categories={categories} activeCategory={activeCategory} setActiveCategory={setActiveCategory}  />
 
 			{/* Iterate on plantList and use the PlanItem component for each item */}
 			<ul className='tjh-plant-list'>
