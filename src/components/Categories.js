@@ -1,11 +1,8 @@
-// Import local state from react to save informations
-import { useState } from 'react'
 // Import Cart.css file to add style
 import '../styles/Categories.css'
 
-function Categories() {
-  const [category, updateCategory] = useState([])
-  
+function Categories({ activeCategory, setActiveCategory }) {
+
   return (
     <select className='tjh-categories'>
       <option className='tjh-categories-select'></option>
@@ -17,5 +14,5 @@ function Categories() {
   )
 }
 
-// Export file to import it in "App.js"
+// Export file to import it in "ShoppingList.js"
 export default Categories

@@ -2,11 +2,19 @@
 import { plantList } from '../datas/plantList'
 // Import PlanItem component
 import PlantItem from './PlantItem'
+// Import Categories component
+import Categories from './Categories'
+// Import local state from react to save informations
+import { useState } from 'react'
 // Import ShoppingList.css file to add style
 import '../styles/ShoppingList.css'
 
+
 // Create a ShoppingList component, with "cart" and "updateCart" as props from "App.js" parent local state
 function ShoppingList({ cart, updateCart }) {
+
+	// // Create an Active Category state variable, , init with an empty string, with "activeCategory" as init variable and "setActiveCategory" as setting function
+	const [activeCategory, setActiveCategory] = useState('')
 
   // Use an accumalator to try to reduce each list value to one value
 	const categories = plantList.reduce((accumulator, plant) =>
@@ -46,17 +54,12 @@ function ShoppingList({ cart, updateCart }) {
 		}
 	}
 
-  // Iterate on categoryList and plantList
-	return (
+  return (
 		<div className='tjh-shopping-list'>
+			{/* Use Categories components with "activeCategory" and "setActiveCategory" as props */}
+			<Categories activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
 
-			<ul>
-				{categories.map((category) => (
-          // Do not miss to generate each element key with data value
-					<li key={category} className='tjh-plant-item'>{category}</li>
-				))}
-			</ul>
-
+			{/* Iterate on plantList and use the PlanItem component for each item */}
 			<ul className='tjh-plant-list'>
 				{plantList.map(({ id, cover, name, water, light, price }) => (
 					<div key={id}>
