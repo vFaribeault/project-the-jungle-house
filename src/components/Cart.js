@@ -18,6 +18,7 @@ function Cart({ cart, updateCart }) {
     0
   )
 
+  
   useEffect(() => {
     alert(`J'aurai ${total}€ à payer 💸`)
   })
