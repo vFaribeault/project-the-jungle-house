@@ -1,5 +1,6 @@
 // Import local state from react to save informations
-import { useState } from 'react'
+// Import effect from react to to create side effects
+import { useState, useEffect } from 'react'
 // Import Cart.css file to add style
 import '../styles/Cart.css'
 
@@ -16,6 +17,10 @@ function Cart({ cart, updateCart }) {
     accumulator + plantType.amount * plantType.price,
     0
   )
+
+  useEffect(() => {
+    alert(`J'aurai ${total}€ à payer 💸`)
+  })
 
   // Check if the cart is opened or closed
   return isOpen ? (
