@@ -23,7 +23,7 @@ function Cart({ cart, updateCart }) {
     alert(`J'aurai ${total}€ à payer 💸`)
   })
 
-  // Check if the cart is opened or close
+  // Check if the cart is opened or closed
   return isOpen ? (
 
     // If the cart is opened
