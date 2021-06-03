@@ -19,13 +19,13 @@ function Cart({ cart, updateCart }) {
   )
 
   // Create an effect variable, pass it a function which returns an alert (1st parameter) and "total" dependencies array (2nd parameter)
-  // Means that the alert will appears only when "total" changes
+  // Means that the alert will appear only when "total" changes
   useEffect(() => {
     alert(`I'll have to pay ${total}€ 💸`)
   }, [total])
 
   // Create an effect variable, pass it a function which returns an update of meta title (1st parameter) and "total" dependencies array (2nd parameter)
-  // Means that the meta title will updates with cart amount only when "total" changes
+  // Means that the meta title will update with cart amount only when "total" changes
   useEffect(() => {
     document.title = `TJH: ${total}€ buying`
   }, [total])
