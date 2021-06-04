@@ -1,5 +1,5 @@
 // Import local state from react to save informations
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 // Import Footer.css file to add style
 import '../styles/Footer.css'
 
