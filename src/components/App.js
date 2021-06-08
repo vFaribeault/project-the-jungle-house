@@ -5,13 +5,25 @@ import ShoppingList from './ShoppingList'
 import Footer from './Footer'
 import '../styles/Layout.css'
 // Import local state from react to save informations
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 // Create an App component
 function App() {
-  // Create a Cart local state variable, init with an empty array (to get an object array of plan items with their properties)
+
+  // Declare a savedCart variable using localStorage to get the cart at the 1st page load
+	const savedCart = localStorage.getItem('cart')
+
+  // Create a Cart local state variable
   // with "cart" as init variable and "updateCart" as setting function
-  const [cart, updateCart] = useState([])
+  // and init it with the parsed savedCart (because its an object) if it exists
+  // or an empty array if don't (to get an object array of plan items with their properties)
+	const [cart, updateCart] = useState(savedCart ? JSON.parse(savedCart) : [])
+
+  // Create an effect variable to allow the user to save his cart even if he refreshes the page
+	useEffect(() => {
+		localStorage.setItem('cart', JSON.stringify(cart))
+    // Save the cart only after each cart re-render
+	}, [cart])
 
   return (
     <div>
